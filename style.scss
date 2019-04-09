@@ -1,0 +1,673 @@
+// imports 
+@import "imports/variables.scss";
+@import "imports/mixins.scss";
+
+// code css
+body
+{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;	
+}
+
+
+/*mofification hors sujet !! pour la beauté de la chose */
+.buttonModif
+{
+	margin-top: 20%;
+	height: 100vh;
+}
+
+.popins
+{
+	width: 100%;
+}
+
+.imgModif, .textModif, .AlertModif, .popinsModif, .tabsModif, .tooltipModif, .bonus--content
+{
+	height: 100vh;
+}
+
+h1
+{
+	font-size: 60px;
+}
+
+
+.div--test1
+{
+	padding: 5px 0;
+	height: 100px;
+	margin-top: 20px;
+	border: 1px solid white;
+}
+
+.div--test2
+{
+	padding: 5px 0;
+	height: 100px;
+	margin-top: 20px;
+	border: 1px solid white;
+
+}
+
+
+
+/*Fin des mofif bonus*/
+.font-weight-bold
+{
+	font-weight: bold;
+}
+
+.text-uppercase
+{
+	text-transform: uppercase;
+}
+
+.text-center
+{
+	text-align: center;
+}
+
+.popin-dismiss
+{
+	& i{
+		font-size: 25px;
+		transition: .4s;
+		&:hover
+		{
+			color: $color-muted;
+		}
+	}
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.container-fluid
+{
+	width: 100%;
+}
+
+.row
+{
+	display: inline;
+}
+
+.btn
+{
+	padding: 9px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	border: 1px solid $color-but;
+	color: black;
+	transition: 0.3s;
+
+	&:hover{
+		background-color: #C3C3C3;
+	}
+}
+
+// tabs
+
+@include tabs();
+
+// Attribute butModif ...
+
+@include butModif(dark);
+@include butModif(primary);
+@include butModif(success);
+@include butModif(secondary);
+@include butModif(danger);
+@include butModif(warning);
+@include butModif(info);
+@include butModif(light);
+@include butModif(white);
+@include butModif(muted);
+
+
+@include act-dis(desable);
+@include act-dis(active);
+
+// Attribute imgChange ...
+
+@include imgChange(responsive);
+@include imgChange(circle);
+@include imgChange(thumbnail);
+@include imgChange(rounded);
+@include imgChange(blur);
+
+// Attribute Color text and background...
+
+@include textColor(text, dark);
+@include textColor(text, info);
+@include textColor(text, primary);
+@include textColor(text, success);
+@include textColor(text, secondary);
+@include textColor(text, white);
+@include textColor(text, light);
+@include textColor(text, warning);
+@include textColor(text, muted);
+@include textColor(text, danger);
+
+@include textColor(bg, dark);
+@include textColor(bg, info);
+@include textColor(bg, primary);
+@include textColor(bg, success);
+@include textColor(bg, secondary);
+@include textColor(bg, white);
+@include textColor(bg, light);
+@include textColor(bg, warning);
+@include textColor(bg, muted);
+@include textColor(bg, danger);
+
+// Attribut Alert color ...
+
+@include alertSwitch(dark);
+@include alertSwitch(info);
+@include alertSwitch(primary);
+@include alertSwitch(success);
+@include alertSwitch(secondary);
+@include alertSwitch(white);
+@include alertSwitch(light);
+@include alertSwitch(warning);
+@include alertSwitch(muted);
+@include alertSwitch(danger);
+
+// visivilité ...
+@media print {
+	@include impression(inline);
+	@include impression(inline-block);
+	@include impression(block);
+	@include impression(flex);
+	@include impression(inline-flex);
+
+	@include impHide();
+}
+
+// list-group ...
+
+@include listGroup(primary);
+@include listGroup(danger);
+@include listGroup(secondary);
+@include listGroup(success);
+@include listGroup(info);
+@include listGroup(white);
+@include listGroup(warning);
+@include listGroup(muted);
+@include listGroup(dark);
+@include listGroup(light);
+
+// float ...
+
+@include floatRL(left);
+@include floatRL(right);
+
+
+// tooltip ...
+
+@include toolTip();
+
+// Navbar ...
+@include NavBar(primary);
+@include NavBar(danger);
+@include NavBar(secondary);
+@include NavBar(success);
+@include NavBar(info);
+@include NavBar(white);
+@include NavBar(warning);
+@include NavBar(muted);
+@include NavBar(dark);
+@include NavBar(light);
+@include NavBar(transparent);
+
+// popin modif ...
+
+@include modal();
+
+// Grid responsive ...
+
+@media screen and (min-width: 1200px){
+	@include class_colxl();
+	@include visibilitexl(inline);
+	@include visibilitexl(inline-block);
+	@include visibilitexl(flex);
+	@include visibilitexl(block);
+	@include visibilitexl(inline-flex);
+	@include unvisiblexl();
+	.visible-xs-up{display:block;}
+	.visible-sm-up{display:block;}
+	.visible-md-up{display:block;}
+	.visible-lg-up{display:block;}
+	.visible-xl-up{display:block;}
+
+	.visible-xs-down{display:none;}
+	.visible-sm-down{display:none;}
+	.visible-md-down{display:none;}
+	.visible-lg-down{display:none;}
+	.visible-xl-down{display:block;}
+
+	.hidden-xs-up{display:none;}
+	.hidden-sm-up{display:none;}
+	.hidden-md-up{display:none;}
+	.hidden-lg-up{display:none;}
+	.hidden-xl-up{display:none;}
+
+	.hidden-xs-down{display:block;}
+	.hidden-sm-down{display:block;}
+	.hidden-md-down{display:block;}
+	.hidden-lg-down{display:block;}
+	.hidden-xl-down{display:none;}
+}
+
+@media (min-width: 1200px){
+	@include class_collg();
+	@include visibilitelg(inline);
+	@include visibilitelg(inline-block);
+	@include visibilitelg(flex);
+	@include visibilitelg(block);
+	@include visibilitelg(inline-flex);
+	@include unvisiblelg();
+	.visible-xs-up{display:block;}
+	.visible-sm-up{display:block;}
+	.visible-md-up{display:block;}
+	.visible-lg-up{display:block;}
+	.visible-xl-up{display:none;}
+
+	.visible-xs-down{display:none;}
+	.visible-sm-down{display:none;}
+	.visible-md-down{display:none;}
+	.visible-lg-down{display:block;}
+	.visible-xl-down{display:block;}
+
+	.hidden-xs-up{display:none;}
+	.hidden-sm-up{display:none;}
+	.hidden-md-up{display:none;}
+	.hidden-lg-up{display:none;}
+	.hidden-xl-up{display:block;}
+
+	.hidden-xs-down{display:block;}
+	.hidden-sm-down{display:block;}
+	.hidden-md-down{display:block;}
+	.hidden-lg-down{display:none;}
+	.hidden-xl-down{display:none;}
+}
+
+@media (min-width: 767.96px) and (max-width: 1199.98px){
+	@include class_colmd();
+	@include visibilitemd(inline);
+	@include visibilitemd(inline-block);
+	@include visibilitemd(flex);
+	@include visibilitemd(block);
+	@include visibilitemd(inline-flex);
+	@include unvisiblemd();
+	.visible-xs-up{display:block;}
+	.visible-sm-up{display:block;}
+	.visible-md-up{display:block;}
+	.visible-lg-up{display:none;}
+	.visible-xl-up{display:none;}
+
+	.visible-xs-down{display:none;}
+	.visible-sm-down{display:none;}
+	.visible-md-down{display:block;}
+	.visible-lg-down{display:block;}
+	.visible-xl-down{display:block;}
+
+	.hidden-xs-up{display:none;}
+	.hidden-sm-up{display:none;}
+	.hidden-md-up{display:none;}
+	.hidden-lg-up{display:block;}
+	.hidden-xl-up{display:block;}
+
+	.hidden-xs-down{display:block;}
+	.hidden-sm-down{display:block;}
+	.hidden-md-down{display:none;}
+	.hidden-lg-down{display:none;}
+	.hidden-xl-down{display:none;}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px){
+	@include class_colsm();
+	@include visibilitesm(inline);
+	@include visibilitesm(inline-block);
+	@include visibilitesm(flex);
+	@include visibilitesm(block);
+	@include visibilitesm(inline-flex);
+	@include unvisiblesm();
+	.visible-xs-up{display:block;}
+	.visible-sm-up{display:block;}
+	.visible-md-up{display:none;}
+	.visible-lg-up{display:none;}
+	.visible-xl-up{display:none;}
+	
+	.visible-xs-down{display:none;}
+	.visible-sm-down{display:block;}
+	.visible-md-down{display:block;}
+	.visible-lg-down{display:block;}
+	.visible-xl-down{display:block;}
+	
+	.hidden-xs-up{display:none;}
+	.hidden-sm-up{display:none;}
+	.hidden-md-up{display:block;}
+	.hidden-lg-up{display:block;}
+	.hidden-xl-up{display:block;}
+	
+	.hidden-xs-down{display:block;}
+	.hidden-sm-down{display:none;}
+	.hidden-md-down{display:none;}
+	.hidden-lg-down{display:none;}
+	.hidden-xl-down{display:none;}
+	.row{
+		display: block;
+	}
+}
+
+@media (max-width: 575.98px){
+	@include class_colxs();
+	@include visibilitexs(inline);
+	@include visibilitexs(inline-block);
+	@include visibilitexs(flex);
+	@include visibilitexs(block);
+	@include visibilitexs(inline-flex);
+	@include unvisiblexs();
+	.visible-xs-up{display:block;}
+	.visible-sm-up{display:none;}
+	.visible-md-up{display:none;}
+	.visible-lg-up{display:none;}
+	.visible-xl-up{display:none;}
+	
+	.visible-xs-down{display:block;}
+	.visible-sm-down{display:block;}
+	.visible-md-down{display:block;}
+	.visible-lg-down{display:block;}
+	.visible-xl-down{display:block;}
+	
+	.hidden-xs-up{display:none;}
+	.hidden-sm-up{display:block;}
+	.hidden-md-up{display:block;}
+	.hidden-lg-up{display:block;}
+	.hidden-xl-up{display:block;}
+	
+	.hidden-xs-down{display:none;}
+	.hidden-sm-down{display:none;}
+	.hidden-md-down{display:none;}
+	.hidden-lg-down{display:none;}
+	.hidden-xl-down{display:none;}
+	.row{
+		display: block;
+	}
+
+}
+
+// bonus
+
+.mt-1{
+	margin-top: 2%;
+}
+
+.mt-2{
+	margin-top: 4%;
+}
+
+.mt-3{
+	margin-top: 6%;
+}
+
+.mt-4{
+	margin-top: 8%;
+}
+
+.mt-5{
+	margin-top: 10%;
+}
+
+
+.mb-1{
+	margin-bottom: 2%;
+}
+
+.mb-2{
+	margin-bottom: 4%;
+}
+
+.mb-3{
+	margin-bottom: 6%;
+}
+
+.mb-4{
+	margin-bottom: 8%;
+}
+
+.mb-5{
+	margin-bottom: 10%;
+}
+
+.m-1{
+	margin: 2%;
+}
+
+.m-2{
+	margin: 4%;
+}
+
+.m-3{
+	margin: 6%;
+}
+
+.m-4{
+	margin: 8%;
+}
+
+.m-5{
+	margin: 10%;
+}
+
+.mr-1{
+	margin-right: 2%;
+}
+
+.mr-2{
+	margin-right: 4%;
+}
+
+.mr-3{
+	margin-right: 6%;
+}
+
+.mr-4{
+	margin-right: 8%;
+}
+
+.mr-5{
+	margin-right: 10%;
+}
+
+
+.ml-1{
+	margin-left: 2%;
+}
+
+.ml-2{
+	margin-left: 4%;
+}
+
+.ml-3{
+	margin-left: 6%;
+}
+
+.ml-4{
+	margin-left: 8%;
+}
+
+.ml-5{
+	margin-left: 10%;
+}
+
+.pt-1{
+	padding-top: 2%;
+}
+
+.pt-2{
+	padding-top: 4%;
+}
+
+.pt-3{
+	padding-top: 6%;
+}
+
+.pt-4{
+	padding-top: 8%;
+}
+
+.pt-5{
+	padding-top: 10%;
+}
+
+
+.pb-1{
+	padding-bottom: 2%;
+}
+
+.pb-2{
+	padding-bottom: 4%;
+}
+
+.pb-3{
+	padding-bottom: 6%;
+}
+
+.pb-4{
+	padding-bottom: 8%;
+}
+
+.pb-5{
+	padding-bottom: 10%;
+}
+
+
+.pr-1{
+	padding-right: 2%;
+}
+
+.pr-2{
+	padding-right: 4%;
+}
+
+.pr-3{
+	padding-right: 6%;
+}
+
+.pr-4{
+	padding-right: 8%;
+}
+
+.pr-5{
+	padding-right: 10%;
+}
+
+
+.pl-1{
+	padding-left: 2%;
+}
+
+.pl-2{
+	padding-left: 4%;
+}
+
+.pl-3{
+	padding-left: 6%;
+}
+
+.pl-4{
+	padding-left: 8%;
+}
+
+.pl-5{
+	padding-left: 10%;
+}
+
+.p-1{
+	padding: 2%;
+}
+
+.p-2{
+	padding: 4%;
+}
+
+.p-3{
+	padding: 6%;
+}
+
+.p-4{
+	padding: 8%;
+}
+
+.p-5{
+	padding: 10%;
+}
+
+@include rounded(left);
+@include rounded(right);
+@include rounded(bottom);
+@include rounded(top);
+
+@include border(left);
+@include border(right);
+@include border(bottom);
+@include border(top);
+
+.form-control
+{
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.navbar-brand
+{
+	font-weight: bold;
+}
+
+.form-inline
+{
+	display: flex;
+	justify-content: between;
+}
+
+.navbar-text
+{
+	display: inline-flex;
+}
+
+.nav-justified
+{
+	& a{
+		width: 20%;
+	}
+}
+
+.h1
+{
+	font-size: 60px;
+}
+
+.h3
+{
+	font-size: 50px;
+}
+
+.h4
+{
+	font-size: 40px;	
+}
+
+.h5
+{
+	font-size: 30px;
+}
+
+.h6
+{
+	font-size: 20px;
+}

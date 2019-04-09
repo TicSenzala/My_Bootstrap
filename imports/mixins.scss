@@ -1,0 +1,900 @@
+// grid responsive 
+
+@mixin class_col(){
+	@for $i from 0 through $col{
+		.col-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+@mixin class_colxl(){
+	@for $i from 0 through $col{
+		.col-xl-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+@mixin class_collg(){
+	@for $i from 0 through $col{
+		.col-lg-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+@mixin class_colmd{
+	@for $i from 0 through $col{
+		.col-md-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+@mixin class_colsm{
+	@for $i from 0 through $col{
+		.col-sm-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+@mixin class_colxs{
+	@for $i from 0 through $col{
+		.col-xs-#{$i}{
+			width:(100%/$col)*$i;
+		}
+	}
+}
+
+//mixin pour les boutons...
+
+@mixin butModif($name){
+	.btn-#{$name}{
+		font-size: 20px;
+		text-transform:none;
+		border-radius: 3px;
+		@if($name == dark){
+			background-color: $color-dark;
+			color: white;
+			&:hover
+			{
+				background-color: white;
+				border: 1px solid $color-dark;
+				color: $color-dark;
+			}
+		}
+		@elseif($name == primary){
+			background-color: $color-primary;
+			color: white;
+			&:hover
+			{
+				background-color: white;
+				border:1px solid $color-primary;
+				color: $color-primary;
+			}
+		}
+		@elseif($name == success){
+			background-color: $color-success;
+			color: white;
+			border: none;
+			&:hover
+			{
+				color: white;
+				background-color: #4BC240;
+				border: none;
+			}
+		}
+		@elseif($name == secondary){
+			background-color: $color-secondary;
+			color: $color-white;
+			&:hover
+			{
+				background-color: $color-white;
+			border:1px solid $color-secondary;
+				color: $color-secondary;
+			}
+		}
+		@elseif($name == danger){
+			background-color: $color-danger;
+			color: white;
+			&:hover
+			{
+				background-color: #B93838;
+				color: white;
+			}
+		}
+		@elseif($name == warning){
+			background-color: $color-warning;
+			color: white;
+			border:none;
+			&:hover
+			{
+				background-color: #DEA643;
+				color: white;
+			}	
+		}
+		@elseif($name == info){
+			background-color: $color-info;
+			color: white;
+			&:hover
+			{
+				background-color: #4685A2;
+				color: white;
+			}
+		}
+		@elseif($name == light){
+			background-color: $color-light;
+			color: $color-dark;
+			border:none;
+			&:hover
+			{
+				background-color: #ffffff;
+				color: $color-dark;
+			}
+		}
+		@elseif($name == muted){
+			background-color: $color-muted;
+			color: white;
+			color: $color-dark;
+
+			&:hoverbtn
+			{
+				background-color: #CFCFCF;
+				color: $color-dark;
+			}
+		}
+		@elseif($name == white){
+			background-color: $color-white;
+			color: $color-dark;
+			&:hover
+			{
+				background-color: $color-light;
+				color: white;
+			}
+		}	
+	}
+}
+
+// class photo ...
+
+@mixin imgChange($name){
+	.img-#{$name}{
+		width: 400px;
+		@if($name == responsive)
+		{
+			max-width: 100%;
+		}
+		@elseif($name == circle)
+		{
+			border-radius: 100%;
+		}
+		@elseif($name == thumbnail)
+		{
+			border: 1px solid $color-thumbnail;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		@elseif($name == rounded)
+		{
+			border-radius: 5px;
+		}
+		@elseif($name == blur)
+		{
+			filter: blur(5px);
+		}
+	}
+}
+
+// class color text ...
+
+@mixin textColor($attName, $colorname){
+	.#{$attName}-#{$colorname}{
+		@if($attName == text)
+		{
+			@if($colorname == dark)
+			{
+				color: $color-dark;
+			}
+			@if($colorname == success)
+			{
+				color: $color-success;
+			}
+			@if($colorname == primary)
+			{
+				color: $color-primary;
+			}
+			@if($colorname == danger)
+			{
+				color: $color-danger;
+			}
+			@if($colorname == info)
+			{
+				color: $color-info;
+			}
+			@if($colorname == muted)
+			{
+				color: $color-muted;
+			}
+			@if($colorname == light)
+			{
+				color: $color-light;
+			}
+			@if($colorname == warning)
+			{
+				color: $color-warning;
+			}
+			@if($colorname == secondary)
+			{
+				color: $color-secondary;
+			}
+			@if($colorname == white)
+			{
+				color: $color-white;
+			}
+		}
+		@elseif($attName == bg)
+		{
+			@if($colorname == dark)
+			{
+				background-color: $color-dark;
+			}
+			@if($colorname == success)
+			{
+				background-color: $color-success;
+			}
+			@if($colorname == primary)
+			{
+				background-color: $color-primary;
+			}
+			@if($colorname == danger)
+			{
+				background-color: $color-danger;
+			}
+			@if($colorname == info)
+			{
+				background-color: $color-info;
+			}
+			@if($colorname == muted)
+			{
+				background-color: $color-muted;
+			}
+			@if($colorname == light)
+			{
+				background-color: $color-light;
+			}
+			@if($colorname == warning)
+			{
+				background-color: $color-warning;
+			}
+			@if($colorname == secondary)
+			{
+				background-color: $color-secondary;
+			}
+			@if($colorname == white)
+			{
+				background-color: $color-white;
+			}
+		}
+	}
+}
+
+// couleur et design alert ...
+
+@mixin alertSwitch($alertname)
+{
+	.alert-#{$alertname}{
+		@if($alertname == dark)
+		{
+			background-color: $rgbaDark;
+			color: $color-dark;
+			padding: 20px;
+			border-radius:5px;
+			border: 1px solid $color-dark;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-dark;
+			}		
+		}
+		@if($alertname == success)
+		{
+			background-color: $rgbaSuccess;
+			color: $color-success;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-success;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-success;
+			}
+		}
+		@if($alertname == primary)
+		{
+			background-color: $rgbaprimary;
+			color: $color-primary;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-primary;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-primary;
+			}
+		}
+		@if($alertname == danger)
+		{
+			background-color: $rgbaDanger;
+			color: $color-danger;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-danger;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-danger;
+			}	
+		}
+		@if($alertname == info)
+		{
+			background-color: $rgbaInfo;
+			color: $color-info;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-info;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-info;
+			}	
+		}
+		@if($alertname == muted)
+		{
+			background-color: $rgbaMuted;
+			color: $color-dark;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-muted;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-dakr;
+			}	
+		}
+		@if($alertname == light)
+		{
+			background-color: $rgbaLight;
+			color: $color-dark;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-light;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-light;
+			}	
+		}
+		@if($alertname == warning)
+		{
+			background-color: $rgbaWarning;
+			color: $color-warning;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-warning;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-warning;
+			}	
+		}
+		@if($alertname == secondary)
+		{
+			background-color: $rgbaSecondary;
+			color: $color-secondary;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-secondary;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-secondary;
+			}	
+		}
+		@if($alertname == white)
+		{
+			background-color: $rgbaWhite;
+			color: $color-white;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid $color-white;
+
+			& a{
+				font-weight: bold;
+				text-decoration: none;
+				color: color-white;
+			}	
+		}
+	}
+}
+
+// visibilité des éléments ...
+
+@mixin visibilitexl($disp) {
+	.visible-xl-#{$disp}{
+		display: $disp;
+	}
+}
+@mixin visibilitelg($disp) {
+	.visible-lg-#{$disp}{
+		display: $disp;
+	}
+}
+@mixin visibilitemd($disp) {
+	.visible-md-#{$disp}{
+		display: $disp;
+	}
+}
+@mixin visibilitesm($disp) {
+	.visible-sm-#{$disp}{
+		display: $disp;
+	}
+}
+@mixin visibilitexs($disp) {
+	.visible-xs-#{$disp}{
+		display: $disp;
+	}
+}
+
+@mixin unvisiblexl(){
+	.hidden-xl{
+		display: none;
+	}
+}
+
+@mixin unvisiblelg(){
+	.hidden-lg{
+		display: none;
+	}
+}
+
+@mixin unvisiblemd(){
+	.hidden-md{
+		display: none;
+	}
+}
+
+@mixin unvisiblesm(){
+	.hidden-sm{
+		display: none;
+	}
+}
+
+@mixin unvisiblexs(){
+	.hidden-xs{
+		display: none;
+	}
+}
+
+@mixin impression($disp){
+	.visible-print-#{disp}{
+		display: $disp;
+	}
+}
+
+@mixin impHide()
+{
+	.hidden-print{
+		display:none;
+	}
+}
+
+@mixin NavBar($color){
+	.navbar-#{$color}{
+		text-decoration: none;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+
+		@if($color == primary){
+			border-bottom: 1px solid $color-primary;
+			background-color: white;
+			color: $color-primary;
+			& a{
+				color: $color-primary;
+				&:hover{
+					color: #2F6AAB;
+				}
+			}
+			& i:hover{
+				color: #2F6AAB;
+			}
+		}
+		@if($color == danger){
+			border-bottom: 1px solid $color-danger;
+			background-color: white;
+			color: $color-danger;
+			& a{
+				color: $color-danger;
+				&:hover{
+					color: #8C2E2E;
+				}
+			}
+			& i:hover{
+				color: #8C2E2E;
+			}
+		}
+		@if($color == info){
+			border-bottom: 1px solid $color-info;
+			background-color: white;
+			color: $color-info;
+			& a{
+				color: $color-info;
+				&:hover{
+					color: #2C6276;
+				}
+			}
+			& i:hover{
+				color: #2C6276;
+			}
+		}
+		@if($color == warning){
+			border-bottom: 1px solid $color-warning;
+			background-color: white;
+			color: $color-warning;
+			& a{
+				color: $color-warning;
+				&:hover{
+					color: #A87116;
+				}
+			}
+			& i:hover{
+				color: #A87116;
+			}
+		}
+		@if($color == success){
+			border-bottom: 1px solid $color-success;
+			background-color: white;
+			color: $color-success;
+			& a{
+				color: $color-success;
+				&:hover{
+					color: #349822;
+				}
+			}
+			& i:hover{
+				color: #349822;
+			}
+		}
+		@if($color == light){
+			border-bottom: 1px solid $color-light;
+			background-color: white;
+			color: $color-light;
+			& a{
+				color: $color-light;
+				&:hover{
+					color: #B4B4B4;
+				}
+			}
+			& i:hover{
+				color: #B4B4B4;
+			}
+		}
+		@if($color == secondary){
+			border-bottom: 1px solid $color-secondary;
+			background-color: white;
+			color: $color-secondary;
+			& a{
+				color: $color-secondary;
+				&:hover{
+					color: #295C95;
+				}
+			}
+			& i:hover{
+				color: #295C95
+			}
+		}
+		@if($color == muted){
+			border-bottom: 1px solid $color-muted;
+			background-color: white;
+			color: $color-muted;
+			& a{
+				color: $color-muted;
+				&:hover{
+					color: #B4B4B4;
+				}
+			}
+			& i:hover{
+				color: #B4B4B4;
+			}
+		}
+		@if($color == dark){
+			// border-NavBabottom: 1px solid $color-dark;
+			background-color: $color-dark;
+			color: $color-white;
+			& #nav{
+				color: white;
+				&:hover{
+					color: #4C4D69;
+				}
+			}
+			& i:hover{
+				color: #4C4D69;
+			}
+		}
+		@if($color == white){
+			border-bottom: 1px solid $color-white;
+			background-color: white;
+			color: $color-white;
+			& a{
+				color: $color-white;
+				&:hover{
+					color: #B4B4B4;
+				}
+			}
+			& i:hover{
+				color: #B4B4B4;
+			}
+		}
+		@if($color == transparent)
+		{
+			border: none;
+			background-color: rgba(white, .0);
+			color: white;
+			& a{
+				color: $color-white;
+				&:hover{
+					color: $color-muted;
+				}
+			}
+			& i:hover{
+				color: $color-muted;
+			}
+		}
+
+
+		& a{
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: .4s;
+			font-size: 20px;
+			margin-right: 2%;
+			margin: 30px;
+			position: relative;
+			top: 5px;
+		}
+
+
+		& form{
+			float: right;
+			margin-right: 20px;
+		}
+
+		& i{
+			font-size: 25px;
+			position: relative;
+			top: 7px;
+			transition: .4s;
+		}
+	}
+}
+
+
+@mixin modal() {
+	.modal{
+		font-family: sans-serif;
+		border: 2px solid rgba($color-dark, .2);
+		border-radius: 10px;
+		position: fixed;
+		top: 30%;
+		text-align: center;
+		background-color: white;
+		margin: 0 auto;
+		overflow: auto;
+		z-index: 10000;
+		& hr{
+			border: 2px solid rgba($color-dark, .2);	
+			margin: 10px 0;
+		}
+		& .modal-valid{
+			text-align: right;
+			margin-right: 20px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+@mixin listGroup($color){
+	.navbar-toggler-#{$color}{
+		font-family: sans-serif;
+		border: 1px solid rgba($color-dark, .3);
+		background-color: white;
+		text-align: center;
+		z-index: 0;
+		position: absolute;
+		top: 60px;
+		border-radius: 5px;
+		& a{
+			display: block;
+			text-transform: none;
+			text-decoration: none;
+			margin: 20px;
+			font-size: 20px;
+			transition: .3s;
+			@if($color == dark) {
+				color: $color-dark;
+			}
+			@if ($color == success) {
+				color: $color-success;
+			}
+			@if($color == primary) {
+				color: $color-primary;
+			}
+			@if($color == ligh) {
+				color: $color-light;
+			}
+			@if($color == secondary) {
+				color: $color-secondary;
+			}
+			@if($color == warning) {
+				color: $color-warning;
+			}
+			@if($color == danger) {
+				color: $color-danger;
+			}
+			@if($color == muted) {
+				color: $color-muted;
+			}
+			@if($color == white) {
+				color: $color-white;
+			}
+			@if($color == info) {
+				color: $color-info;
+			}
+			&:hover{
+				color: $color-white;
+			}
+			& hr{
+				background-color: rgba($color-light, .1);
+				height: 1px;
+			}
+
+		}
+	}
+}
+
+@mixin floatRL($direction){
+	.float-#{$direction}{
+		@if($direction == left)
+		{
+			float: left;
+		}
+		@if($direction == right)
+		{
+			float: right;
+		}
+	}
+}
+
+@mixin toolTip(){
+	.tooltip {
+		position: relative;
+		display: inline-block;
+		border-bottom: 1px dotted black;
+		& .tooltiptext {
+			visibility: hidden;
+			width: 200px;
+			background-color: $color-warning;
+			color: $color-dark;
+			text-align: center;
+			border-radius: 6px;
+			margin-left: 15px;
+			padding: 5px 0;
+
+			/* Position the tooltip */
+			position: absolute;
+			z-index: 1;
+		}
+		&:hover .tooltiptext {
+			visibility: visible;
+		}
+	}
+}
+
+@mixin act-dis($att)
+{
+	@if($att == active)
+	{
+		.active{
+			color: $color-white;
+			background-color: $color-primary;
+			&:hover{
+				background-color: $color-dark;
+			}
+		}	
+	}
+	@elseif($att == desable)
+	{
+		.desable:desable{
+			background: #dddddd;
+		}
+	}
+}
+
+@mixin tabs()
+{
+	.tab-pane
+	{
+		background: red;
+		color: white;
+		font-size: 60px;
+		font-family: sans-serif;
+	}
+	.tab-list
+	{	
+		margin: 0;
+		& li{	
+			display: inline-block;
+			text-align: center;
+			font-size: 30px;
+			padding:0 20px;
+			transition: .5s;
+		}
+	}
+}
+
+@mixin rounded($att)
+{
+	.rounded-#{$att}{
+		@if ($att == top)
+		{
+			border-top-radius: 10px;
+		}
+		@if($att == right)
+		{
+			border-right-radius: 10px;
+		}
+		@if($att == left)
+		{
+			border-left-radius: 10px;
+		}
+		@if($att == bottom)
+		{
+			border-bottom-radius: 10px;
+		}
+		@if($att == circle)
+		{
+			border-radius: 100%;
+		}
+	}
+}
+
+@mixin border($dire)
+{
+	.border-#{$dire}{
+		@if $dire == left {
+			border-bottom: 1px solid black;  
+		} 
+		@if $dire == right{
+			border-right: 1px solid black; 
+		}
+		@if $dire == top{
+			border-left: 1px solid black; 
+		}
+		@if $dire == bottom{
+			border-bottom: 1px solid black; 
+		}
+	}
+}

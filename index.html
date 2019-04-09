@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Test scss</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+</head>
+<body>
+	<!-- Tout ce qui concerner la navbar -->
+	<div class="img-responsive"></div>
+
+	<div class="navbar-dark">
+		<a href="bonus.html" id="nav" class="navbar-brand">Liste-Bonus</a>
+		<a href="bonus.html" id="nav">Accueil</a>
+		<i class="fas fa-chevron-circle-down " id="icon-deroul"><div class="navbar-toggler-dark col-lg-2" id="myMenu">
+			<a href="#">Accueil</a>
+			<a href="#">Profil</a>
+			<a href="#">Paramètre</a>
+			<a href="#">Déconnexion</a>
+		</div></i>
+		<span class="navbar-text ml-5">Text aligné de la nav bar</span>
+		<form class="form-inline">
+			<input type="search" name="search" class="btn hidden-sm form-control hidden-xs">
+			<button class="btn btn-dark hidden-sm hidden-xs">Search</button>
+		</form>
+	</div>
+	<div class="popins">
+		<div id="overback"></div>
+		<div class="container">
+			<div class="modal container" id="myModal">
+				<span class="popin-dismiss float-right"><i class="far fa-times-circle"></i></span>
+				<h1>Title : Nouvelle fenêtre</h1>
+				<hr class="text-dark">
+				<p id="text-modal"></p>
+				<hr class="text-dark">
+				<div class="modal-valid">
+					<button class="btn btn-primary close">Close</button> 
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 
+	<div class="cont_grid">
+		<div class="text-center">
+			<h1 class="text-dark mt-5">Container - Container-fluid</h1>
+		</div> -->
+		<!-- Tout ce qui concerne la grid bootstrap -->
+		<!-- <div class="bg-warning text-dark div--test1 text-center text-uppercase font-weight-bold">
+			<p>Container-fluid</p>
+		</div>
+		<div class=" div--test1 mt-1 bg-warning container text-center text-uppercase text-dark font-weight-bold">
+			<p>Container</p>
+		</div>
+		
+		<div class="text-center">
+			<h1 class="mt-5 text-dark">Grid-bootstrap</h1>
+		</div>
+		<div class="div--test2 text-dark bg-warning">
+			<p>col-lg-1</p>
+		</div>
+		<div class="div--test2 text-dark bg-warning">
+			<p>col-lg-2</p>
+		</div>
+		<div class="text-center mt-5">
+			<h1 class="text-dark">Row</h1>
+		</div>
+		<div class="row container">
+			<div class="col-lg-3 div--test2 bg-warning"></div>
+			<div class="col-lg-3 div--test2 bg-warning"></div>
+			<div class="col-lg-3 div--test2 bg-warning"></div>
+			<div class="col-lg-3 div--test2 bg-warning"></div>
+		</div>
+	</div> -->
+	<div class="buttonModif text-center  bg-white">
+		<h1 class="text-dark">Button</h1>
+		<!-- <button class="btn">Valider</button> -->
+		<button class="btn btn-danger">Valider</button>
+		<button class="btn btn-primary">Valider</button>
+		<button class="btn btn-dark">Valider</button>
+		<button class="btn btn-success">Valider</button>
+		<button class="btn btn-secondary">Valider</button>
+		<button class="btn btn-muted">Valider</button>
+		<button class="btn btn-info">Valider</button>
+		<button class="btn btn-warning">Valider</button>
+		<!-- <button class="btn btn-white">Valider</button> -->
+		<button class="btn btn-light">Valider</button>
+	</div>
+
+	<div class="imgModif text-center">
+		<h1 class="text-dark">Image</h1>
+		<img class="img-responsive" src="photo.jpg" width="300px">
+	</div>
+	
+
+	<div class="text-center container textModif">
+		<h1 class=" text-dark">Test-Text-Color</h1>
+		<div class="text-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+	<!-- Tout ce qui concerne les alertes -->
+	<div class="AlertModif container text-center p-2">
+		<div>	
+			<h1 class="text-dark">Type d'alert</h1>
+		</div>
+
+			<div class="alert-primary col-lg-12">
+				Alert !!!!!! On a réussi !!!!! <a href="">Clique ici</a> 
+			</div>
+			<div class="alert-secondary col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-success col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-danger col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-warning col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-info col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-light col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-dark col-lg-12">
+				Alert !!!!!!
+			</div>
+			<div class="alert-muted col-lg-12">
+				Alert !!!!!!
+			</div>
+		</div>
+		<!-- Tout ce qui concerne les popins -->
+		<div class="text-center popinsModif">
+			<h1 class="text-dark ">Popins</h1>
+			<button class="btn btn-warning col-lg-8 myBtn" data-target="C'est mon modal">Clique sur moi !</button>
+		</div>
+		<!-- </div> -->
+<!-- 	<div class="hide">
+		<div class="text-center">
+			<h1 class="mt-5 text-dark">Hidden </h1>
+		</div>
+		<div class="div--test1 text-dark bg-warning hidden-md">Hidden-md</div>
+		<div class="div--test1 text-dark bg-warning visible-lg hidden-sm">Visible-lg and hidden-sm</div>
+	</div> -->
+
+
+
+
+
+	<div class="tabsModif container text-center">
+		<!-- onglet -->
+		<h1 class="text-dark mb-3">Onglets</h1>
+		<div class="tab-pane container font-weight-bold p-4 bg-warning"></div>
+		<div class="tab-content container">
+			<nav>
+				<ul class="tab-list">
+					<li data-target="Les boutons c'est beau ..." class="col-lg-2 text-dark">Boutons</li>
+					<li data-target="Les Navbar aussi ..." class="col-lg-2 text-dark">Navbar</li>
+					<li data-target="Les Popins aussi ..." class="col-lg-2 text-dark">Popins</li>
+					<li data-target="Les Infobulles je pense aussi ..." class="col-lg-2 text-dark">Infobulles</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+	<div class="tooltipModif container text-center">
+		<!-- Tooltip -->
+		<h1 class="text-dark">Tooltip - Infobulles</h1>
+		<div class="contain--butt">
+			<button class="tooltip mt-2 btn btn-success mb-5" title="El title">HOVER!!!!<span class="tooltiptext" data-placement="left"></span></button>
+		</div>
+	</div>
+
+	<!-- mes balises script -->
+	<script src="imports/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="imports/script.js"></script>
+
+
+</body>
+</html>
